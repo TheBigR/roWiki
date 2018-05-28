@@ -1,0 +1,11 @@
+<h2>{{page.title | uppercase}} Details</h2>
+<div><span>page id: </span>{{page.id}}</div>
+<div><span>title: </span>{{page.title}}</div>
+<div><span>body: </span>{{page.body}}</div>
+<div>
+  <label>title:
+    <input [(ngModel)]="page.title" placeholder="title">
+  </label>
+</div>
+
+
