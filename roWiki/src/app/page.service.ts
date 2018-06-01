@@ -14,6 +14,11 @@ export class PageService {
     return of (PAGES);
   }
 
+  getPage(id: number): Observable<Page>{
+    this.messageService.add(`PageService: fetched hero id=${id}`);
+    return of (PAGES.find(page => page.id === id));
+  }
+
   constructor(private messageService: MessageService) { }
 
 }

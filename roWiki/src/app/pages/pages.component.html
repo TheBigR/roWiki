@@ -1,11 +1,13 @@
 <h2>My Pages</h2>
 <ul class="pages">
-  <li *ngFor="let page of pages" (click)="onSelect(page)">
-    <span class="badge">{{page.id}}</span> {{page.title}}
+  <li *ngFor="let page of pages">
+    <a routerLink="/detail/{{page.id}}">
+      <span class="badge">{{page.id}}</span> {{page.title}}
+    </a>
   </li>
 </ul>
 
-<app-page-detail [page]="selectedPage"></app-page-detail>
+
 
 
 

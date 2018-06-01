@@ -1,5 +1,8 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Page} from "../page";
+import {ActivatedRoute} from "@angular/router";
+import {PageService} from "../page.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-page-detail',
@@ -8,11 +11,22 @@ import {Page} from "../page";
 })
 export class PageDetailComponent implements OnInit {
 
-  @Input() page: Page;
+  page: Page;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private pageService: PageService, private location: Location) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getPage();
+  }
+
+  getPage(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.pageService.getPage(id)
+      .subscribe(page => this.page = page);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
