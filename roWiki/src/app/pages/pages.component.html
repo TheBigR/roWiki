@@ -4,14 +4,8 @@
     <span class="badge">{{page.id}}</span> {{page.title}}
   </li>
 </ul>
-<h2>{{selectedPage.title | uppercase}} Details</h2>
-<div><span>page id: </span>{{selectedPage.id}}</div>
-<div><span>title: </span>{{selectedPage.title}}</div>
-<div><span>body: </span>{{selectedPage.body}}</div>
-<div>
-  <label>title:
-    <input [(ngModel)]="selectedPage.title" placeholder="title">
-  </label>
-</div>
+
+<app-page-detail [page]="selectedPage"></app-page-detail>
+
 
 
