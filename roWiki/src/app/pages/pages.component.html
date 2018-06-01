@@ -1,10 +1,16 @@
-<h2>{{page.title | uppercase}} Details</h2>
-<div><span>page id: </span>{{page.id}}</div>
-<div><span>title: </span>{{page.title}}</div>
-<div><span>body: </span>{{page.body}}</div>
+<h2>My Pages</h2>
+<ul class="pages">
+  <li *ngFor="let page of pages" (click)="onSelect(page)">
+    <span class="badge">{{page.id}}</span> {{page.title}}
+  </li>
+</ul>
+<h2>{{selectedPage.title | uppercase}} Details</h2>
+<div><span>page id: </span>{{selectedPage.id}}</div>
+<div><span>title: </span>{{selectedPage.title}}</div>
+<div><span>body: </span>{{selectedPage.body}}</div>
 <div>
   <label>title:
-    <input [(ngModel)]="page.title" placeholder="title">
+    <input [(ngModel)]="selectedPage.title" placeholder="title">
   </label>
 </div>
 

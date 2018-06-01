@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Page} from "../page";
+import {PAGES} from "../mock-pages";
+import {Page} from "../page";
 
 @Component({
   selector: 'app-pages',
@@ -8,11 +9,14 @@ import { Page} from "../page";
 })
 export class PagesComponent implements OnInit {
 
-  page: Page = {
-    id: 1,
-    title: 'just the first page',
-    body: 'crappy body'
-  };
+  pages = PAGES;
+
+  selectedPage : Page;
+
+  onSelect(page: Page): void {
+    this.selectedPage = page;
+  }
+
   constructor() { }
 
   ngOnInit() {
