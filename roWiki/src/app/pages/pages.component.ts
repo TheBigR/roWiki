@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PAGES} from "../mock-pages";
 import {Page} from "../page";
+import {PageService} from "../page.service";
 
 @Component({
   selector: 'app-pages',
@@ -9,7 +10,12 @@ import {Page} from "../page";
 })
 export class PagesComponent implements OnInit {
 
-  pages = PAGES;
+  pages:  Page[];
+
+  getPages(): void {
+    this.pageService.getPages()
+      .subscribe(pages => this.pages = pages);
+  }
 
   selectedPage : Page;
 
@@ -17,9 +23,10 @@ export class PagesComponent implements OnInit {
     this.selectedPage = page;
   }
 
-  constructor() { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
+    this.getPages();
   }
 
 
