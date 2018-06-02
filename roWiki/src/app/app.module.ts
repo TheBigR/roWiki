@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {HttpClientModule} from "@angular/common/http";
+import { PageSearchComponent } from './page-search/page-search.component';
 
 
 
@@ -22,7 +23,8 @@ import {HttpClientModule} from "@angular/common/http";
     PagesComponent,
     PageDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    PageSearchComponent
   ],
   imports: [
     BrowserModule,
