@@ -29,4 +29,9 @@ export class PageDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.pageService.updatePage(this.page)
+      .subscribe(() => this.goBack());
+  }
+
 }
