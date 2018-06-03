@@ -7,4 +7,6 @@ key features:
 a. Create new pages.
 b. Read existing pages.
 b. Update existing pages.
-c. Delete existing pages. 
+c. Delete existing pages.
+
+embedded NgxEditor for editing and creating new pages.
