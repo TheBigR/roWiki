@@ -74,6 +74,16 @@ export class PageService {
     );
   }
 
+  searchPages(term: string): Observable<Page[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Page[]>(`${this.pagesUrl}/?title=${term}`).pipe(
+      tap(_ => this.log(`found pages matching "${term}"`)),
+      catchError(this.handleError<Page[]>('searchPages', []))
+    );
+  }
+
 
 
 }

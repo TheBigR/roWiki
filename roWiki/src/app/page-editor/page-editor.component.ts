@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {PageService} from "../page.service";
+import {Location} from "@angular/common";
+import {Page} from "../page";
+import {ActivatedRoute} from "@angular/router";
+
+
 
 
 @Component({
@@ -8,11 +14,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageEditorComponent implements OnInit {
 
-  htmlContent: string;
+  page: Page;
 
-  constructor() { }
+  save(): void {
+    this.pageService.updatePage(this.page)
+      .subscribe(() => this.goBack());
+  }
 
-  ngOnInit() {
+  goBack(): void {
+    this.location.back();
+  }
+
+  htmlContent: any;
+  title: string;
+
+  crap(){
+    this.title = 'fuck off';
+    this.htmlContent = 'kill em all';
+  }
+
+  kipi(){
+    console.log(this.title);
+    console.log(this.htmlContent.toString());
+    this.page = new Page();
+    this.page.title = this.title;
+    this.page.body = this.htmlContent;
+  }
+
+  getPage(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.pageService.getPage(id)
+      .subscribe(page => this.page = page);
+  }
+
+  constructor(private route: ActivatedRoute, private pageService: PageService, private location: Location) { }
+
+  ngOnInit(): void {
+    this.getPage();
   }
 
 }

@@ -14,6 +14,13 @@ import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {HttpClientModule} from "@angular/common/http";
 import { PageSearchComponent } from './page-search/page-search.component';
+import { PageEditorComponent } from './page-editor/page-editor.component';
+import {NgxEditorModule} from "ngx-editor";
+import {AngularFontAwesomeModule} from "angular-font-awesome";
+
+
+
+
 
 
 
@@ -24,7 +31,8 @@ import { PageSearchComponent } from './page-search/page-search.component';
     PageDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    PageSearchComponent
+    PageSearchComponent,
+    PageEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +41,9 @@ import { PageSearchComponent } from './page-search/page-search.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService,{dataEncapsulation: false}
-    )
-
+    ),
+    NgxEditorModule,
+    AngularFontAwesomeModule
   ],
   providers: [PageService, MessageService],
   bootstrap: [AppComponent]

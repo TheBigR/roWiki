@@ -1,0 +1,12 @@
+<div id="search component">
+  <label>Page Search:
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  </label>
+  <ul class="search-result">
+    <li *ngFor="let page of pages$ | async" >
+      <a routerLink="/detail/{{page.id}}">
+        {{page.title}}
+      </a>
+    </li>
+  </ul>
+</div>

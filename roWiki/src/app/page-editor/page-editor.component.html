@@ -1,2 +1,23 @@
-<app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+ <br>
+ <br>
+  <div>
+    <label>title:
+      <input [(ngModel)]="page.title" placeholder="title">
+    </label>
+  </div>
+<br>
+<br>
+<app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="page.body" height="300px" width="1200px" ></app-ngx-editor>
+  <br>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+  <button (click)="crap()">do crap</button>
+  <button (click)="kipi()">check check check</button>
+  <br>
+  <br>
+  <div *ngIf="page">
+    <div><span>title: </span>{{page.title}}</div>
+    <div><span>body: </span><a [innerHTML]="page.body"></a></div>
+  </div>
+
 
