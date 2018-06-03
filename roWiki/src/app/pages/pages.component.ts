@@ -22,19 +22,9 @@ export class PagesComponent implements OnInit {
     this.getPages();
   }
 
-  add(title: string): void {
-    title = title.trim();
-    if (!title) {return;}
-    this.pageService.addPage({title} as Page)
-      .subscribe(page => {
-        this.pages.push(page);
-      });
-  }
 
-  delete(page: Page): void {
-    this.pages = this.pages.filter(p => p !== page);
-    this.pageService.deletePage(page).subscribe();
-  }
+
+
 
 
 

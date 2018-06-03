@@ -4,9 +4,6 @@ import {Location} from "@angular/common";
 import {Page} from "../page";
 import {ActivatedRoute} from "@angular/router";
 
-
-
-
 @Component({
   selector: 'app-page-editor',
   templateUrl: './page-editor.component.html',
@@ -15,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 export class PageEditorComponent implements OnInit {
 
   page: Page;
+  pages:  Page[];
 
   save(): void {
     this.pageService.updatePage(this.page)
@@ -25,26 +23,30 @@ export class PageEditorComponent implements OnInit {
     this.location.back();
   }
 
-  htmlContent: any;
   title: string;
 
-  crap(){
-    this.title = 'fuck off';
-    this.htmlContent = 'kill em all';
+  getPages(): void {
+    this.pageService.getPages()
+      .subscribe(pages => this.pages = pages);
   }
 
-  kipi(){
-    console.log(this.title);
-    console.log(this.htmlContent.toString());
-    this.page = new Page();
-    this.page.title = this.title;
-    this.page.body = this.htmlContent;
+  createPage(title: string){
+    this.getPages();
+    title = title.trim();
+    if (!title) {return;}
+    this.pageService.addPage(this.page)
+      .subscribe(page => this.pages.push(page))
   }
 
   getPage(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.pageService.getPage(id)
-      .subscribe(page => this.page = page);
+    if (!id) {
+      this.page = new Page();
+    }
+    else {
+      this.pageService.getPage(id)
+        .subscribe(page => this.page = page)
+    }
   }
 
   constructor(private route: ActivatedRoute, private pageService: PageService, private location: Location) { }
