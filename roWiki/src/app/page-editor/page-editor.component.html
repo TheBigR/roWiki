@@ -11,7 +11,7 @@
   <br>
   <button (click)="goBack()">go back</button>
   <button *ngIf="page" (click)="save()">save</button>
-  <button (click)="createPage(page.title)" routerLink="/pages">create page</button>
+  <button *ngIf="!page.id" (click)="createPage(page.title)" routerLink="/pages">create page</button>
   <br>
   <br>
 
