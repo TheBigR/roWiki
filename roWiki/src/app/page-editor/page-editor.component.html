@@ -1,4 +1,5 @@
- <br>
+<div *ngIf="page">
+<br>
  <br>
   <div>
     <label>title:
@@ -14,6 +15,7 @@
   <button *ngIf="!page.id" (click)="createPage(page.title)" routerLink="/pages">create page</button>
   <br>
   <br>
+</div>
 
 
 
