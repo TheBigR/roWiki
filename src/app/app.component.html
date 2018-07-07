@@ -1,8 +1,8 @@
 <h1 routerLink="/pages">{{title}}</h1>
 <nav>
-  <button routerLink="/dashboard">Top pages</button>
-  <button routerLink="/pages">Pages</button>
-  <button routerLink="/new">New</button>
+  <button pButton type="button" label="Top pages"  routerLink="/dashboard"></button>
+  <button pButton type="button" label="Pages"  routerLink="/pages"></button>
+  <button pButton type="button" label="New" routerLink="/new"></button>
   <app-page-search></app-page-search>
 </nav>
 <router-outlet></router-outlet>

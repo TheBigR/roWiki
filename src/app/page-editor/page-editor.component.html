@@ -10,9 +10,9 @@
 <br>
 <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="page.body" height="300px" width="1200px" ></app-ngx-editor>
   <br>
-  <button (click)="goBack()">go back</button>
-  <button *ngIf="page" (click)="save()">save</button>
-  <button *ngIf="!page.id" (click)="createPage(page.title)" routerLink="/pages">create page</button>
+  <button pButton type="button" label="go back" (click)="goBack()"></button>
+  <button *ngIf="page" pButton type="button" label="save"  (click)="save()"></button>
+  <button *ngIf="!page.id" pButton type="button" label="create page"  (click)="createPage(page.title)" routerLink="/pages"></button>
   <br>
   <br>
 </div>

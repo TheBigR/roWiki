@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from "@angular/forms";
-
+import {ButtonModule} from "primeng/button";
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { PageDetailComponent } from './page-detail/page-detail.component';
@@ -17,6 +17,7 @@ import { PageSearchComponent } from './page-search/page-search.component';
 import { PageEditorComponent } from './page-editor/page-editor.component';
 import {NgxEditorModule} from "ngx-editor";
 import {AngularFontAwesomeModule} from "angular-font-awesome";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 
@@ -43,7 +44,9 @@ import {AngularFontAwesomeModule} from "angular-font-awesome";
       InMemoryDataService,{dataEncapsulation: false}
     ),
     NgxEditorModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    ButtonModule
   ],
   providers: [PageService, MessageService],
   bootstrap: [AppComponent]

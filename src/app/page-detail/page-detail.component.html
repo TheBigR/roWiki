@@ -7,10 +7,10 @@
 
 <br>
 <br>
-<button class="delete" title="delete page"
-        (click)="delete(page)" routerLink="/pages">Delete Page</button>
-<button routerLink="/edit/{{page.id}}">Edit</button>
-<button (click)="goBack()">go back</button>
+<button pButton type="button" label="Delete Page"  class="delete" title="delete page"
+        (click)="delete(page)" routerLink="/pages"></button>
+<button pButton type="button" label="Edit" routerLink="/edit/{{page.id}}"></button>
+<button pButton type="button" label="go back" (click)="goBack()"></button>
 <br>
 <br>
 </div>

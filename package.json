@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.2.0",
+    "@angular/animations": "^5.2.11",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
@@ -28,6 +28,8 @@
     "hoek": "^5.0.3",
     "ngx-bootstrap": "^3.0.0",
     "ngx-editor": "^3.3.0",
+    "primeicons": "^1.0.0-beta.9",
+    "primeng": "^6.0.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
