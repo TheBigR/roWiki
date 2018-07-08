@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable, Subject} from "rxjs";
 import {debounceTime, distinctUntilChanged, switchMap} from "rxjs/operators";
 import {Page} from "../page";
-import {PageService} from "../page.service";
+import {PageService} from "../Services/page.service";
 
 
 @Component({
