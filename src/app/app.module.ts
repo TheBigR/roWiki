@@ -10,8 +10,6 @@ import { MessagesComponent } from './messages/messages.component';
 import {MessageService} from "./Services/message.service";
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
-import {InMemoryDataService} from "./in-memory-data.service";
 import {HttpClientModule} from "@angular/common/http";
 import { PageSearchComponent } from './page-search/page-search.component';
 import { PageEditorComponent } from './page-editor/page-editor.component';
@@ -40,9 +38,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService,{dataEncapsulation: false}
-    ),
     NgxEditorModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
