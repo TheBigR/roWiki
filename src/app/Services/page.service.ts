@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Page} from "../page";
-import {Observable} from "rxjs/Observable";
-import {of} from "rxjs/observable/of";
-import {MessageService} from "./message.service";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Page} from '../page';
+import {Observable} from 'rxjs/Observable';
+import {of} from 'rxjs/observable/of';
+import {MessageService} from './message.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError,  tap } from 'rxjs/operators';
 
 
@@ -27,7 +27,7 @@ export class PageService {
     return this.http.get<Page[]>(this.pagesUrl)
       .pipe(
         tap(pages => this.log(`fetched pages`)),
-        catchError(this.handleError('getHeroes',[]))
+        catchError(this.handleError('getHeroes', []))
       );
   }
 
@@ -39,7 +39,7 @@ export class PageService {
       );
   }
 
-  addPage (page: Page): Observable<Page>{
+  addPage (page: Page): Observable<Page> {
     return this.http.post<Page>(this.pagesUrl, page, httpOptions).pipe(
       tap((page: Page) => this.log(`added page w/ id=${page.id}`)),
       catchError(this.handleError<Page>('addPage'))
@@ -56,7 +56,7 @@ export class PageService {
   }
 
   private  log(message: string) {
-    this.messageService.add('PageService: '+ message);
+    this.messageService.add('PageService: ' + message);
   }
 
   private  handleError<T> (operation = 'operation', result?: T) {
@@ -67,7 +67,7 @@ export class PageService {
     };
   }
 
-  updatePage (page: Page): Observable<any>{
+  updatePage (page: Page): Observable<any> {
     return this.http.put(this.pagesUrl, page, httpOptions).pipe(
       tap(_ => this.log(`updated page id=${page.id}`)),
       catchError(this.handleError<any>('updatePage'))
