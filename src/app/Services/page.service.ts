@@ -41,13 +41,13 @@ export class PageService {
 
   addPage (page: Page): Observable<Page> {
     return this.http.post<Page>(this.pagesUrl, page, httpOptions).pipe(
-      tap((page: Page) => this.log(`added page w/ id=${page.id}`)),
+      tap((page: Page) => this.log(`added page w/ id=${page._id}`)),
       catchError(this.handleError<Page>('addPage'))
     );
   }
 
   deletePage (page: Page | string ): Observable<Page> {
-    const id = typeof page === 'string' ? page : page.id;
+    const id = typeof page === 'string' ? page : page._id;
     const url = `${this.pagesUrl}/${id}`;
     return this.http.delete<Page>(url, httpOptions).pipe(
       tap(_ => this.log(`deleted page id=${id}`)),
@@ -69,7 +69,7 @@ export class PageService {
 
   updatePage (page: Page): Observable<any> {
     return this.http.put(this.pagesUrl, page, httpOptions).pipe(
-      tap(_ => this.log(`updated page id=${page.id}`)),
+      tap(_ => this.log(`updated page id=${page._id}`)),
       catchError(this.handleError<any>('updatePage'))
     );
   }

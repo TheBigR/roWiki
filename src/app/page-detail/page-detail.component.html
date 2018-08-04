@@ -1,6 +1,6 @@
 <div *ngIf="page">
   <h2>{{page.title | uppercase}} Details</h2>
-  <div><span>page id: </span>{{page.id}}</div>
+  <div><span>page id: </span>{{page._id}}</div>
   <div><span>title: </span>{{page.title}}</div>
   <div><span>body: </span><a [innerHTML]="page.body"></a></div>
 
@@ -9,7 +9,7 @@
 <br>
 <button pButton type="button" label="Delete Page"  class="delete" title="delete page"
         (click)="delete(page)" routerLink="/pages"></button>
-<button pButton type="button" label="Edit" routerLink="/edit/{{page.id}}"></button>
+<button pButton type="button" label="Edit" routerLink="/edit/{{page._id}}"></button>
 <button pButton type="button" label="go back" (click)="goBack()"></button>
 <br>
 <br>

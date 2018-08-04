@@ -12,7 +12,7 @@
   <br>
   <button pButton type="button" label="go back" (click)="goBack()"></button>
   <button *ngIf="page" pButton type="button" label="save"  (click)="save()"></button>
-  <button *ngIf="!page.id" pButton type="button" label="create page"  (click)="createPage(page.title)" routerLink="/pages"></button>
+  <button *ngIf="!page._id" pButton type="button" label="create page"  (click)="createPage(page.title)" routerLink="/pages"></button>
   <br>
   <br>
 </div>

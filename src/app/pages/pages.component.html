@@ -1,8 +1,8 @@
 <h2>My Pages</h2>
 <ul class="pages">
   <li *ngFor="let page of pages">
-    <a routerLink="/detail/{{page.id}}">
-      <span class="badge">{{page.id}}</span> {{page.title}}
+    <a routerLink="/detail/{{page._id}}">
+      <span class="badge"></span> {{page.title}}
     </a>
   </li>
 </ul>
