@@ -20,7 +20,7 @@ export class PageDetailComponent implements OnInit {
   }
 
   getPage(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.pageService.getPage(id)
       .subscribe(page => this.page = page);
   }

@@ -31,7 +31,7 @@ export class PageService {
       );
   }
 
-  getPage(id: number): Observable<Page> {
+  getPage(id: string): Observable<Page> {
     const url = `${this.pagesUrl}/${id}`;
     return this.http.get<Page>(url).pipe(
       tap(_ => this.log(`fetched page id=${id}`)),
@@ -46,8 +46,8 @@ export class PageService {
     );
   }
 
-  deletePage (page: Page | number ): Observable<Page> {
-    const id = typeof page === 'number' ? page : page.id;
+  deletePage (page: Page | string ): Observable<Page> {
+    const id = typeof page === 'string' ? page : page.id;
     const url = `${this.pagesUrl}/${id}`;
     return this.http.delete<Page>(url, httpOptions).pipe(
       tap(_ => this.log(`deleted page id=${id}`)),

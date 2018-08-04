@@ -1,5 +1,5 @@
 export class Page {
-  id: number;
+  id: string;
   title: string;
   body: string;
 }
