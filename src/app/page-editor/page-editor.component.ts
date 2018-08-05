@@ -39,7 +39,7 @@ export class PageEditorComponent implements OnInit {
   }
 
   getPage(): void {
-    const id = this.route.snapshot.paramMap.get('_id');
+    const id = this.route.snapshot.paramMap.get('id');
     if (!id) {
       this.page = new Page();
     }
